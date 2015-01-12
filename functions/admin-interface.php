@@ -1,5 +1,8 @@
 <?php
-// storefrontThemes Admin Interface
+/**
+ * @todo remove unused functions.
+  * @todo remove unused js
+ */
 
 /*-----------------------------------------------------------------------------------
 
