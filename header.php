@@ -11,7 +11,7 @@ $shopdesc = 'Custom business WordPress themes for sale by Smartest Themes. Premi
 $shopkeys = 'smartest themes, WordPress themes, business themes, app themes';
 global $paged, $page;
 if (is_front_page()) { ?><meta name="description" content="<?php echo $homedesc; ?>" />
-<meta name="keywords" content="<?php echo $homekeys; ?>" /><meta property="og:title" content="Smartest Themes, WordPress Themes" /><meta property="og:site_name" content="<?php echo $sitename; ?>" /><meta property="og:url" content="<?php bloginfo('url'); ?>" /><meta property="og:description" content="<?php echo $homedesc; ?>" /><meta property="og:image" content="https://smartestthemes.com/wp-content/uploads/2013/06/smartest-themes-gplus-profile.png" /><meta property="og:type" content="website" /><meta property="fb:admins" content="<?php echo $fb_id; ?>" />
+<meta name="keywords" content="<?php echo $homekeys; ?>" /><meta property="og:title" content="Smartest Themes, WordPress Themes" /><meta property="og:site_name" content="<?php echo $sitename; ?>" /><meta property="og:url" content="<?php bloginfo('url'); ?>" /><meta property="og:description" content="<?php echo $homedesc; ?>" /><meta property="og:image" content="<?php echo network_site_url(); ?>wp-content/uploads/2015/01/st-2015-profile-avatar-250x250.png" /><meta property="og:type" content="website" /><meta property="fb:admins" content="<?php echo $fb_id; ?>" />
 <?php } //end if front page
 elseif ( is_archive() && 'download'==get_post_type() ) {
 		echo '<meta name="description" content="'.$shopdesc.'" /><meta name="keywords" content="'.$shopkeys.'" />';
