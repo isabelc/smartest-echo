@@ -10,7 +10,7 @@ if(has_post_thumbnail()) {
 	$alt = get_post_meta($thumb, '_wp_attachment_image_alt', true);
 	$image = vt_resize( '', $full_feat_img_url, 458, 458, false ); ?>
 	
-	<a href="<?php echo $full_feat_img_url; ?>" id="singleDLimg" class="fancybox"  rel="group-001" title="<?php the_title_attribute(); ?>" ><img src="<?php echo $image['url']; ?>" alt="<?php echo esc_attr( $alt ); ?>" itemprop="screenshot" title="<?php echo esc_attr( $alt ); ?>" width="<?php echo $image[width]; ?>" height="<?php echo $image[height]; ?>" /></a>
+	<a href="<?php echo $full_feat_img_url; ?>" id="singleDLimg" class="fancybox"  rel="group-001" title="<?php the_title_attribute(); ?>" ><img src="<?php echo $image['url']; ?>" alt="<?php echo esc_attr( $alt ); ?>" itemprop="screenshot" title="<?php echo esc_attr( $alt ); ?>" width="<?php echo $image[width]; ?>" height="<?php echo $image['height']; ?>" /></a>
 
 <?php } 
 // end feat. img
@@ -30,7 +30,7 @@ if ( $attachments ) { ?>
 	$full_img_url = $image_full[0];
 	$image = vt_resize( '', $full_img_url, 138, 138, false ); ?>
 	<a href="<?php echo $image_full[0]; ?>" class="fancybox" title="<?php echo get_the_title($attachment->ID); ?>" rel="group-001">
-	<img src="<?php echo $image['url']; ?>" title="<?php echo esc_attr( get_the_title($attachment->ID) ); ?>" alt="<?php echo esc_attr( get_the_title($attachment->ID) ); ?>" width="<?php echo $image[width]; ?>" height="<?php echo $image[height]; ?>" id="sgl_gall_img" />
+	<img src="<?php echo $image['url']; ?>" title="<?php echo esc_attr( get_the_title($attachment->ID) ); ?>" alt="<?php echo esc_attr( get_the_title($attachment->ID) ); ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" id="sgl_gall_img" />
 	</a>
 <?php 
     }// end foreach
