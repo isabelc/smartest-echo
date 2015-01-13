@@ -2,7 +2,10 @@
 /*
 Template Name: Homepage
 */
-get_header(); ?><?php if(get_option('smartestb_show_slider') == 'true') {
+get_header(); 
+
+if(get_option('smartestb_show_slider') == 'true') {
+	// @todo remove all slider code when I stop using it.
 	$slidertransspeed = 5;
 	$slideranimspeed = 500;
 	if(get_option('smartestb_slider_trans_speed')) {$slidertransspeed = get_option('smartestb_slider_trans_speed');}
@@ -18,6 +21,7 @@ get_header(); ?><?php if(get_option('smartestb_show_slider') == 'true') {
 		});
 	});
 	</script><?php
+	
 $sliderheight = 365; 
 if(get_option('smartestb_slider_height')) {$sliderheight = get_option('smartestb_slider_height');} ?><style>#mainslider {min-height:<?php echo $sliderheight + 40;?>px;}</style><div id="mainslider" class="blueberry"><ul class="slides"><?php //BEGIN Slider LOOP
 $loop = new WP_Query( array( 'post_type' => 'slide' ) );
