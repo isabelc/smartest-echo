@@ -1193,10 +1193,14 @@ function storefrontthemes_machine($options) {
 			if($counter >= 2){
 			   $output .= '</div>'."\n";
 			}
-			$jquery_click_hook = ereg_replace("[^A-Za-z0-9]", "", strtolower($value['name']) );
+			$jquery_click_hook = preg_replace('#[^A-Za-z0-9]#', '', strtolower($value['name']) );
 			$jquery_click_hook = "storefront-option-" . $jquery_click_hook;
-//			$jquery_click_hook = "storefront-option-" . str_replace("&","",str_replace("/","",str_replace(".","",str_replace(")","",str_replace("(","",str_replace(" ","",strtolower($value['name'])))))));
-			$menu .= '<li><a class="'.  $value['class'] .'" title="'.  $value['name'] .'" href="#'.  $jquery_click_hook  .'"><span class="storefront-nav-icon"></span>'.  $value['name'] .'</a></li>';
+
+			$menu .= '<li><a ';
+			if ( !empty( $value['class'] ) ) {
+				$menu .= 'class="'. $value['class'] .'" ';
+			}
+			$menu .= 'title="'.  $value['name'] .'" href="#'.  $jquery_click_hook  .'"><span class="storefront-nav-icon"></span>'.  $value['name'] .'</a></li>';
 			$output .= '<div class="group" id="'. $jquery_click_hook  .'"><h2>'.$value['name'].'</h2>'."\n";
 		break;                                  
 		} 
