@@ -123,29 +123,7 @@ function vt_resize( $attach_id = null, $img_url = null, $width, $height, $crop =
 	return $vt_image;
 }
 
-
-/*-----------------------------------------------------------------------------------*/
-/* Add specific IE styling/hacks to HEAD */
-/*-----------------------------------------------------------------------------------*/
-
-add_action('wp_head','storefront_styles_head');
-function storefront_styles_head() {
-?>
-
-<!--[if IE 6]>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/includes/js/pngfix.js"></script>
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_directory'); ?>/css/ie6.css" />
-<![endif]-->	
-
-<!--[if IE 7]>
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_directory'); ?>/css/ie7.css" />
-<![endif]-->
-
-<!--[if IE 8]>
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_directory'); ?>/css/ie8.css" />
-<![endif]-->
-
-<?php } //END storefront_styles_head
+// @todo do i need this? 
 /*-----------------------------------------------------------------------------------*/
 /* Browser detection body_class() output */
 /*-----------------------------------------------------------------------------------*/
