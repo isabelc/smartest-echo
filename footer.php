@@ -1,4 +1,4 @@
-<div class="clear"></div><?php require(TEMPLATEPATH . '/footer-widgets.php');?>
+<div class="clear"></div><?php require TEMPLATEPATH . '/footer-widgets.php'; ?>
 
 </div><!-- #content -->
 
