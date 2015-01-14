@@ -9,7 +9,7 @@
 <a href="<?php echo $largeimage['url']; ?>" class="fancybox-image" rel="<?php the_title(); ?>">
 <img alt="<?php the_title_attribute(); ?>" title="<?php the_title_attribute(); ?>" src="<?php echo $image['url']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" itemprop="thumbnailUrl" />
 </a>
-<?php } ?><h2><a href="<?php the_permalink();?>" itemprop="name"><?php the_title(); ?></a></h2>
+<?php } ?><h2><a href="<?php the_permalink();?>" itemprop="name" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 <div class="post-meta">
 <p><span class="blogicon time"></span> <?php the_time('F j, Y \a\t g:i a') ?></p>
 <p><span class="blogicon cats"></span> <?php the_category(', ') ?>&nbsp;
