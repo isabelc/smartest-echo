@@ -11,15 +11,11 @@ $storefront_options = get_option('smartestb_options');
 
 $GLOBALS['template_path'] = get_bloginfo('template_directory');
 
-// Image Alignment radio box
-$options_thumb_align = array("alignleft" => "Left","alignright" => "Right","aligncenter" => "Center");
 $options_slide_interval = array("300","400","500","600","700","800","900","1000","1100","1200","1300","1400","1500","1600","1700","1800","1900","2000");
 
 $animationspeeds = array("300","400","500","600","700","800","900","1000","1100","1200","1300","1400","1500","1600","1700","1800","1900","2000");
 
 $transspeeds = array("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
-
-$homepage_carousel = array("" => "Don't Use the Carousel","carousel-show-products.php" => "Show Products","carousel-show-categories.php" => "Show Categories","carousel-show-posts.php" => "Show Posts");
 
 // Select box border-radius
 $options_pixels = array("0px","1px","2px","3px","4px","5px","6px","7px","8px","9px","10px","11px","12px","13px","14px","15px","16px","17px","18px","19px","20px");
@@ -312,56 +308,6 @@ $options[] = array( "name" => "Slider Animation Speed",
                     "type" => "select",
                     "options" => $animationspeeds);
 
-/*
-======================
-Homepage Carousel
-======================
-*/
-
-$options[] = array( "name" => "Homepage Carousel","class" => "home",
-					"type" => "heading");
-					
-$options[] = array( "name" => "Show Carousel?",
-					"desc" => "Check this if you want to show the carousel on your homepage. <strong>PLEASE NOTE: This carousel needs at least 5 products in order to work properly. You won't see your products until there are at least 5 products added</strong>.",
-					"id" => $shortname."_show_carousel",
-					"std" => "false",
-					"type" => "checkbox");
-					
-$options[] = array( "name" => "Text Above Carousel",
-                    "desc" => "Type the text you want to show above the carousel.",
-                    "id" => $shortname."_carousel_text",
-                    "std" => "Latest Products",
-                    "type" => "text");
-					
-$options[] = array( "name" => "Carousel Height",
-                    "desc" => "Please specify a height in pixels for your carousel images. Each image will be 200px in width.",
-                    "id" => $shortname."_carousel_height",
-                    "std" => "200",
-                    "type" => "text");
-
-if(isset($storefront_shop_categories)) {
-$options[] = array(	"name" => "Carousel Product Category",
-					"desc" => "You can select to show all products or products from a specific category in your carousel.",
-					"id" => $shortname."_carousel_prod_category",
-					"std" => "Select a category:",
-					"type" => "select",
-					"options" => $storefront_shop_categories);
-					}
-$options[] = array( "name" => "Carousel Transition Speed",
-                    "desc" => "How many seconds do you want to pause on each set of images?",
-                    "id" => $shortname."_carousel_trans_speed",
-                    "std" => "7",
-                    "type" => "select",
-                    "options" => $transspeeds);
-                    
-$options[] = array( "name" => "Carousel Animation Speed",
-                    "desc" => "How fast do you want the transition between sets of images to be? (in milliseconds)",
-                    "id" => $shortname."_carousel_anim_speed",
-                    "std" => "600",
-                    "type" => "select",
-                    "options" => $animationspeeds);
-                    
-					
 /*
 ======================
 Footer
