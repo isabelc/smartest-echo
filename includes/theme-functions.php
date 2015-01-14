@@ -79,69 +79,6 @@ function register_my_menus() {
 	);
 }
 add_theme_support( 'post-thumbnails' );
-/*
-===============================================================
-Custom Post Type For Slider
-===============================================================
-*/
-
-add_action('init', 'create_slider_post_type');
-
-		function create_slider_post_type() {
-	    	$args = array(
-	        	'label' => __('Slider','storefront'),
-	        	'singular_label' => __('Slide','storefront'),
-	        	'public' => true,
-	        	'show_ui' => true,
-	        	'capability_type' => 'post',
-	        	'hierarchical' => false,
-	        	'rewrite' => true,
-	        	'exclude_from_search' => true,
-        		'labels' => array(
-					'name' => __( 'Slider','storefront' ),
-					'singular_name' => __( 'Slide','storefront' ),
-					'add_new' => __( 'Add New','storefront' ),
-					'add_new_item' => __( 'Add New Slide','storefront' ),
-					'edit' => __( 'Edit','storefront' ),
-					'edit_item' => __( 'Edit Slide','storefront' ),
-					'new_item' => __( 'New Slide','storefront' ),
-					'view' => __( 'View Slide','storefront' ),
-					'view_item' => __( 'View Slide','storefront' ),
-					'search_items' => __( 'Search Slides','storefront' ),
-					'not_found' => __( 'No slides found','storefront' ),
-					'not_found_in_trash' => __( 'No slides found in Trash','storefront' ),
-					'parent' => __( 'Parent Slide','storefront' ),
-				),
-	        	'supports' => array('title', 'thumbnail')
-	        );
-
-	    	register_post_type( 'slide' , $args );
-		}
-
-/* Options For Slider */
-
-		add_action("admin_init", "admin_init");
-		add_action('save_post', 'save_slide_meta');
-
-		function admin_init(){
-			add_meta_box("slider-meta", "Slider Options", "meta_options", "slide", "normal", "low");
-		}
-
-		function meta_options(){
-			global $post;
-			$custom = get_post_custom($post->ID);
-			$link = $custom["link"][0];
-	?>
-	<p>Set a featured image for this slide using the built-in WordPress featured image feature which is normally located on the right hand side of this page.  </p><p>Then, enter a url (beginning with "http://") of a page, post, product, category or even an off-site link using the field below.</p><br />
-		<label style="width:80px;float:left;display:block;font-weight:bold;padding:5px;">Link URL:</label><input style="width:400px;border:1px solid #ccc;" name="link" value="<?php echo $link; ?>" /><br />
-	<?php
-		}
-
-	function save_slide_meta(){
-		global $post;
-		if ( isset($_POST["link"]) )
-			update_post_meta($post->ID, "link", $_POST["link"]);
-	}
 
 /*
 ===============================================================

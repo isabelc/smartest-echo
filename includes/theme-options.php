@@ -11,19 +11,6 @@ $storefront_options = get_option('smartestb_options');
 
 $GLOBALS['template_path'] = get_bloginfo('template_directory');
 
-$options_slide_interval = array("300","400","500","600","700","800","900","1000","1100","1200","1300","1400","1500","1600","1700","1800","1900","2000");
-
-$animationspeeds = array("300","400","500","600","700","800","900","1000","1100","1200","1300","1400","1500","1600","1700","1800","1900","2000");
-
-$transspeeds = array("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
-
-// Select box border-radius
-$options_pixels = array("0px","1px","2px","3px","4px","5px","6px","7px","8px","9px","10px","11px","12px","13px","14px","15px","16px","17px","18px","19px","20px");
-
-//More Options
-$all_uploads_path = get_bloginfo('url') . '/wp-content/uploads/';
-$all_uploads = get_option('smartestb_uploads');
-$other_entries = array("Select a number:","0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19");
 // THESE ARE THE DIFFERENT FIELDS
 $options = array();
 
@@ -156,41 +143,6 @@ $options[] = array( "name" =>  "Footer Links",
 					"std" => "",
 					"type" => "color");
 					
-
-/*
-======================
-Homepage Slider
-======================
-*/
-
-$options[] = array( "name" => "Homepage Slider","class" => "home",
-					"type" => "heading");
-					
-$options[] = array( "name" => "Show Slider?",
-					"desc" => "Check this if you want to show the slider on your homepage.",
-					"id" => $shortname."_show_slider",
-					"std" => "true",
-					"type" => "checkbox");
-					
-$options[] = array( "name" => "Homepage Slider Height",
-                    "desc" => "Please specify a height in pixels for your slider images. The slider width is 960px. Your slider images will need to be a minimum of this size to look correct.",
-                    "id" => $shortname."_slider_height",
-                    "std" => "365",
-                    "type" => "text");
-
-$options[] = array( "name" => "Slider Transition Speed",
-                    "desc" => "How many seconds do you want to pause on each slide?.",
-                    "id" => $shortname."_slider_trans_speed",
-                    "std" => "5",
-                    "type" => "select",
-                    "options" => $transspeeds);
-                    
-$options[] = array( "name" => "Slider Animation Speed",
-                    "desc" => "How fast do you want the transition between images to be? (in milliseconds)",
-                    "id" => $shortname."_slider_anim_speed",
-                    "std" => "500",
-                    "type" => "select",
-                    "options" => $animationspeeds);
 
 /*
 ======================
