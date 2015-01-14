@@ -47,13 +47,6 @@ change yellow links color in footer widgets.
 
 */
 
-/* @todo remove this iconfont and replace with FA icons. */
-@font-face {
-    font-family:iconfont;src:url(css/fonts/pulsarjs-webfont.eot);src:url(css/fonts/pulsarjs-webfont.eot?#iefix) format('embedded-opentype'),url(css/fonts/pulsarjs-webfont.woff) format('woff'),url(css/fonts/pulsarjs-webfont.ttf) format('truetype'),url(css/fonts/pulsarjs-webfont.svg#) format('svg');font-weight:400;font-style:normal;
-}
-
-
-
 /*--------------------------------------------------------------
 1.0 - Reset
 --------------------------------------------------------------*/
@@ -2067,15 +2060,15 @@ img.product_image,
     height: 16px;
     white-space: nowrap;
 }
-/* @todo remove this iconfont and .blogicon styles everywhere, and replace with FA icons. */
 span.blogicon {
-    font-family: iconfont;
+    font-family: FontAwesome;
     display: inline;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     font-style: normal;
-    top: 4px;
+    top: 1px;
     position: relative;
+    margin-right: 2px;
 }
 
 span.blogicon.author {
@@ -2083,21 +2076,22 @@ span.blogicon.author {
 }
 
 span.blogicon.time:before {
-    content: 'B';
+    content: '\f017';
+    font-size: 18px;
 }
 
 span.blogicon.cats:before {
-    content: '2';
+    content: '\f02e';
 }
 
 span.blogicon.tag:before {
-    content: 't';
+    content: '\f02b';
     margin-left: 10px;
     font-size: 17px;
 }
 
 span.blogicon.author:before {
-    content: 'E';
+    content: '\f007';
     margin-left: 10px;
     font-size: 16px;
 }
