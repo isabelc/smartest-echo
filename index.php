@@ -1,13 +1,20 @@
 <?php get_header(); 
 $schema = ''; 
+$rowclass = 'row reading-row';
 if ( is_home() ) {
 	$schema = 'Blog';
 } 
-?><div class="row reading-row"><div class="col_12" <?php if ( $schema ) echo ' itemscope itemtype="http://schema.org/'.$schema.'"'; ?>>
+
+if ( is_post_type_archive( 'download' ) ) {
+	$rowclass = 'row';
+}
+
+?>
+<div class="<?php echo $rowclass; ?>">
+<div class="col_12" <?php if ( $schema ) echo ' itemscope itemtype="http://schema.org/'.$schema.'"'; ?>>
 <article id="entry" class="pad20both pad20vertical">
-<?php if ( have_posts() ) : ?>
-<h1><?php if(is_home()) {
-_e( 'Code Snippets', 'smartestb' );
+<?php if ( have_posts() ) : ?><h1><?php if(is_home()) {
+_e( 'Blog', 'smartestb' );
 	} elseif ( is_category() ) {
 	printf( __( '%s', 'smartestb' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 } elseif ( is_tag() ) {

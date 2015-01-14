@@ -35,7 +35,18 @@ if(has_post_thumbnail()) {
 ?><li><a href="<?php echo $buttonlink;?>"><img alt="<?php the_title(); ?>" title="<?php echo $buttontext; ?>" src="<?php echo $image['url']; ?>" width="<?php echo $image['width']; ?>" /></a></li><?php endwhile; wp_reset_query(); //END SLIDER LOOP 
 ?></ul></div><?php 
 } //END OF CHECK TO SHOW SLIDER 
-?><div class="col_12" itemscope itemtype="http://schema.org/LocalBusiness"><div id="entry" class="pad10bottom pad20both"><?php
+?>
+
+
+
+<div class="fullwide-row splash selfclear">
+	<a href="<?php bloginfo('url'); ?>/downloads" title="WordPress Themes For Business"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2015/01/smartest-themes-fullwidth-1756.png" alt="WordPress Themes For Business" title="WordPress Themes For Business" width="1756" height="250" /></a>
+
+</div>
+
+
+
+<div class="col_12" itemscope itemtype="http://schema.org/LocalBusiness"><div id="entry" class="pad10bottom pad20both"><?php
 if ( have_posts() ) :
 	while ( have_posts() ) : the_post();
 		the_content();

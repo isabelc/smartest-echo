@@ -5,14 +5,19 @@ if ( 'post' == $post_type ) {
 } else {
 	$schema = 'Article';
 } 
-?><div class="col_12" <?php echo ' itemscope itemtype="http://schema.org/' . $schema . '"'; ?>>
+?>
+<div class="row"><div class="col_12" <?php echo ' itemscope itemtype="http://schema.org/' . $schema . '"'; ?>>
 <?php 
+$cssclass = 'pad20both pad20vertical';
 // if is a regular post, add grid 8 and grid 4 for sideabar @Test
+
 if ( 'post' == $post_type ) { 
-	?><div class="col_8"><?php 
+	?><div class="col_8"><?php
+
+	$cssclass = 'pad20both pad20vertical reading-row';
 }
 
-?><article id="entry" class="pad20both pad20vertical"><?php
+?><article id="entry" class="<?php echo $cssclass; ?>"><?php
 
 if ( have_posts() ) :
 	while ( have_posts() ) : the_post(); 
@@ -65,4 +70,4 @@ if ( 'post' == $post_type ) {
 
 ?></div><!-- .col_8 --><div class="col_4 last"><?php get_sidebar(); ?></div><?php
 }
-?></div><!-- .col_12 --><?php get_footer(); ?>
+?></div><!-- .col_12 --></div><?php get_footer(); ?>

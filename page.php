@@ -2,20 +2,26 @@
 $schema = '';
 $single_q = '';
 $single_answer = '';
+$rowclass = 'row';
 
-if(is_page('contact') ) {
+if (is_page('contact') ) {
 	$schema = 'ContactPage';
 } elseif (is_page('faqs')) {
 	$schema = 'CollectionPage';
+	$rowclass = 'row reading-row';
 } elseif (is_page('checkout')) {
 	$schema = 'CheckoutPage';
+	$rowclass = 'row edd-tables-row';
+} elseif (is_page('my-account')) {
+	$rowclass = 'row edd-tables-row';
 } elseif ( 'qa_faqs' == get_post_type() ) {
 
 	$schema = 'QAPage';
 	$single_q = ' itemscope itemtype="http://schema.org/Question"';
 	$single_answer = ' itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer"';
-	
-} ?><div class="col_12" <?php if ( $schema ) echo ' itemscope itemtype="http://schema.org/'.$schema.'"'; ?>>
+	$rowclass = 'row reading-row';
+} ?>
+<div class="<?php echo $rowclass; ?>"><div class="col_12" <?php if ( $schema ) echo ' itemscope itemtype="http://schema.org/'.$schema.'"'; ?>>
 <?php if(has_post_thumbnail()) {
 	$thumb = get_post_thumbnail_id(); 
 	$image = vt_resize( $thumb, '', 960, 500, true ); ?>
@@ -48,7 +54,4 @@ else : ?>
 	<h1><?php _e( 'Nothing Found', 'storefront' ); ?></h1>
 	<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'twentyeleven' ); ?></p>
 	<?php get_search_form();
-endif; ?>
-</article>
-</div><!-- #col_12 -->
-<?php get_footer(); ?>
+endif; ?></article></div><!-- #col_12 --></div><?php get_footer(); ?>

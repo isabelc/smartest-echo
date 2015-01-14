@@ -54,19 +54,5 @@ embed nav cart php instead of using include.
 	<div id="main">
 
 		<div id="primary">
-
-		<!-- @test this is test -->
-
-		<?php if (is_front_page()) { ?>
-
-
-		<div class="fullwide-row splash">
-	<a href="<?php bloginfo('url'); ?>/downloads" title="WordPress Themes For Business"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2015/01/smartest-themes-fullwidth-1756.png" alt="WordPress Themes For Business" title="WordPress Themes For Business" width="1756" height="250" /></a>
-
-</div>
-
-
-		<?php } ?>
-<!-- @test removed .row from class below!!! -->
 			<div id="content" class="box<?php if ( is_front_page() ) { echo ' homerow'; } ?>">
 			<?php wp_enqueue_style('font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'); ?>
