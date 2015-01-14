@@ -46,6 +46,58 @@ fix difff gray colors in footer.
 change yellow links color in footer widgets.
 
 */
+@font-face {
+    font-family: 'neptune';
+    src: url('css/fonts/neptune-webfont.eot');
+    src: url('css/fonts/neptune-webfont.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/neptune-webfont.woff2') format('woff2'),
+         url('css/fonts/neptune-webfont.woff') format('woff'),
+         url('css/fonts/neptune-webfont.ttf') format('truetype'),
+         url('css/fonts/neptune-webfont.svg#bpreplayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'neptune_bold';
+    src: url('css/fonts/neptune-bold-webfont.eot');
+    src: url('css/fonts/neptune-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/neptune-bold-webfont.woff2') format('woff2'),
+         url('css/fonts/neptune-bold-webfont.woff') format('woff'),
+         url('css/fonts/neptune-bold-webfont.ttf') format('truetype'),
+         url('css/fonts/neptune-bold-webfont.svg#bpreplaybold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'neptune_italic';
+    src: url('css/fonts/neptune-italic-webfont.eot');
+    src: url('css/fonts/neptune-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/neptune-italic-webfont.woff2') format('woff2'),
+         url('css/fonts/neptune-italic-webfont.woff') format('woff'),
+         url('css/fonts/neptune-italic-webfont.ttf') format('truetype'),
+         url('css/fonts/neptune-italic-webfont.svg#bpreplayitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'neptune_bold_italic';
+    src: url('css/fonts/neptune-bold_italic-webfont.eot');
+    src: url('css/fonts/neptune-bold_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/neptune-bold_italic-webfont.woff2') format('woff2'),
+         url('css/fonts/neptune-bold_italic-webfont.woff') format('woff'),
+         url('css/fonts/neptune-bold_italic-webfont.ttf') format('truetype'),
+         url('css/fonts/neptune-bold_italic-webfont.svg#bpreplaybold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
 
 /*--------------------------------------------------------------
 1.0 - Reset
@@ -70,9 +122,15 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 body,
 a.button,button.button,input.button,
 #review_form #submit {
-    font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,
+
+    font-family:neptune,HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,
     "Lucida Grande",sans-serif;
+
+    /*font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,
+    "Lucida Grande",sans-serif;*/
+
 }
+
 h1 {
     font-size: 30px;
     margin-bottom: 20px;
@@ -133,7 +191,8 @@ body.home .execphpwidget h3.edd_download_title,.execphpwidget h3.edd_download_ti
     margin-bottom: 0;
 }
 input[type=submit] {
-    font-family: Abel,sans-serif;
+    /* @test is needed?
+    font-family: Abel,sans-serif;*/
 }
 .att-grab{
   font-size:46px;
@@ -151,7 +210,11 @@ body {
     background-image: url(images/sand.png);
     background-color: #ccc;
     /*background-color:#f2f2f2;*/
-    font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    
+/*@test this repeat declaration of fonts, is it needed? */
+    
+    /*font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;*/
+
     line-height: 1.6;
       /*line-height: 1; @test remove */
     font-size: 16px;
@@ -188,11 +251,18 @@ table {
 }
 
 strong {
-    font-weight: 700;
+    /*font-weight: 700;*/
+    font-family: 'neptune_bold';/* @test em */
 }
 
 em {
     font-style: italic;
+    font-family: 'neptune_italic';/* @test em */
+}
+
+strong em, em strong{
+    font-family: 'neptune_bold_italic'; 
+    /*@test */
 }
 
 article code,article pre {
@@ -607,7 +677,9 @@ a.button,a.button.alt,body #review_form #submit,body a.button,body button.button
     background: -moz-linear-gradient(center top,#3e9ee5 20%,#1666ca 100%);
 }
 
+/* @test if needed */
 a.button,button.button,input.button,#review_form #submit {
+
     font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif!important;
     text-shadow: none!important;
     font-weight: 400!important;
@@ -2169,7 +2241,12 @@ body h3 a.button {
     clear: both;
 }
 
-div.pagination,span.highlight,ul.item-list li div.item-desc,ul.item-list li div.meta,div.dir-search input[type=text],a.#reply-title small a,div#item-header div#item-actions h3 {
+div.pagination,
+span.highlight,
+ul.item-list li div.item-desc,
+ul.item-list li div.meta,
+div.dir-search input[type=text],
+div#item-header div#item-actions h3 {
     font-size: 14px;
 }
 
@@ -2315,7 +2392,7 @@ table.shop_table.cart td {
     }
 
     #header-right {
-        width: 100%!important!important;
+        width: 100%!important;
         clear: both!important;
         float: none!important;
         margin-left: 0;
