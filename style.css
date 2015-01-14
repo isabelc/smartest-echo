@@ -663,7 +663,7 @@ a.button.livedemo {
     margin-top: 10px;
     display: inline-block;
     position: relative;
-    top: -11px;
+    /*top: -11px; @todo remove */
 }
 
 a,span.user-nicename,input[type=submit] {
