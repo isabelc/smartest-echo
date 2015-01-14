@@ -24,8 +24,6 @@ $options_pixels = array("0px","1px","2px","3px","4px","5px","6px","7px","8px","9
 $all_uploads_path = get_bloginfo('url') . '/wp-content/uploads/';
 $all_uploads = get_option('smartestb_uploads');
 $other_entries = array("Select a number:","0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19");
-$fonts = array("","Lobster","'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',Helvetica,arial,'Lucida Grande',sans-serif","arial,sans-serif","Abel","Antic","Changa One","Linden Hill","Quicksand","Terminal Dosis","Coda","Podkova","Questrial","Andika","Actor","Josephin Sans","News Cycle","Quattrocento","Josephin Slab","Yanone Kaffeesatz","Raleway");
-$fontsizes = array("","11px","12px","13px","14px","16px","18px","20px","22px","24px","26px","28px","30px","32px","36px","40px","44px","48px","52px","56px","60px");
 // THESE ARE THE DIFFERENT FIELDS
 $options = array();
 
@@ -35,49 +33,6 @@ $options = array();
 	$options[] = array( "name" => "<strong>Welcome to Storefront Echo!</strong>",
 						"type" => "info",
 						"std" => "<p>To get started, first click the 'Save all Changes' button to save the theme defaults. Good luck creating your site and don't forget to let us know once you're done at the <a href='http://storefrontthemes.com/showcase'  target='blank'>Storefront Themes Showcase!</a></p></ul>");
-
-/* Logo */
-
-$options[] = array( "name" => "Logo","class" => "image",
-					"type" => "heading");
-					
-$options[] = array( "name" => "Custom Logo",
-					"desc" => "Upload a logo for your theme, or specify the image address of your online logo. (http://yoursite.com/logo.png)",
-					"id" => $shortname."_logo",
-					"std" => "",
-					"type" => "upload");
-					
-$options[] = array( "name" => "Logo Text",
-                    "desc" => "If you are using text instead of an image, enter your logo text here.",
-                    "id" => $shortname."_logo_text",
-                    "std" => "Your Logo",
-                    "type" => "text");
-					
-$options[] = array( "name" => "Logo Font",
-					"desc" => "Select which font you would like to use for your text-based logo.",
-					"id" => $shortname."_logo_font",
-					"type" => "select",
-					"std" => "Changa One",
-					"options" => $fonts);
-					
-$options[] = array( "name" => "Logo Font Size",
-					"desc" => "Select a font-size for your text-based logo.",
-					"id" => $shortname."_logo_font_size",
-					"type" => "select",
-					"std" => "36px",
-					"options" => $fontsizes);
-					
-$options[] = array( "name" =>  "Logo Color",
-					"desc" => "Customize the color of your site logo text.<br /><strong>NOTE: This is only if you are not using your own image for a logo, but rather just text.</strong>",
-					"id" => $shortname."_logo_color",
-					"std" => "",
-					"type" => "color");
-					
-$options[] = array( "name" =>  "Logo Hover Color",
-					"desc" => "Customize the color of your site logo text when hovered.<br /><strong>NOTE: This is only if you are not using your own image for a logo, but rather just text.</strong>",
-					"id" => $shortname."_logo_hover_color",
-					"std" => "",
-					"type" => "color");
 
 /*
 ======================
@@ -200,77 +155,6 @@ $options[] = array( "name" =>  "Footer Links",
 					"id" => $shortname."_footer_link_color",
 					"std" => "",
 					"type" => "color");
-/*
-======================
-Typography
-======================
-*/
-
-$options[] = array( "name" => "Typography","class" => "typography",
-					"type" => "heading"); 
-					
-$options[] = array( "name" => "Heading Font",
-					"desc" => "Select which font you would like to use for your headings.",
-					"id" => $shortname."_heading_font",
-					"type" => "select",
-					"std" => "Abel",
-					"options" => $fonts);
-					
-$options[] = array( "name" => "H1 Heading Font Size",
-					"desc" => "Select a font-size for your H1 heading tags.",
-					"id" => $shortname."_heading_one_font_size",
-					"type" => "select",
-					"std" => "30px",
-					"options" => $fontsizes);
-					
-$options[] = array( "name" => "H2 Heading Font Size",
-					"desc" => "Select a font-size for your H2 heading tags.",
-					"id" => $shortname."_heading_two_font_size",
-					"type" => "select",
-					"std" => "26px",
-					"options" => $fontsizes);
-
-$options[] = array( "name" => "Body Font",
-					"desc" => "Select which font you would like to use for your main body text.",
-					"id" => $shortname."_body_font",
-					"type" => "select",
-					"std" => "Abel",
-					"options" => $fonts);
-					
-$options[] = array( "name" => "Body Font Size",
-					"desc" => "Select a font-size for your body.",
-					"id" => $shortname."_body_font_size",
-					"type" => "select",
-					"std" => "16px",
-					"options" => $fontsizes);
-					
-
-/*
-======================
-Navigation
-======================
-*/
-
-$options[] = array( "name" => "Navigation","class" => "navigation",
-					"type" => "heading");
-					
-$options[] = array( "name" => "Show search in navigation?",
-					"desc" => "Check this if you want to show a search field in the navigation.",
-					"id" => $shortname."_show_nav_search",
-					"std" => "true",
-					"type" => "checkbox");
-
-$options[] = array( "name" => "Show cart total tab in navigation?",
-					"desc" => "Check this if you want to show the cart total tab in the navigation.",
-					"id" => $shortname."_show_nav_cart",
-					"std" => "false",
-					"type" => "checkbox");
-					
-$options[] = array( "name" => "Show social icons on top of navigation?",
-					"desc" => "If checked, this will allow for social icons to be shown above the navigation bar. Just enter your social addresses in the spaces below.",
-					"id" => $shortname."_show_social_bar",
-					"std" => "true",
-					"type" => "checkbox");
 					
 
 /*
