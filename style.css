@@ -45,6 +45,8 @@ fix difff gray colors in footer.
 
 change yellow links color in footer widgets.
 
+@todo reduce the duplicate font-family calls.
+
 */
 @font-face {
     font-family: 'neptune';
@@ -120,14 +122,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 --------------------------------------------------------------*/
 
 body,
-a.button,button.button,input.button,
-#review_form #submit {
+/* are the buttons needed here? @todo */
+a.button,button.button,input.button {
 
     font-family:neptune,HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,
     "Lucida Grande",sans-serif;
-
-    /*font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,
-    "Lucida Grande",sans-serif;*/
 
 }
 
@@ -190,10 +189,6 @@ body.home .execphpwidget h3.edd_download_title,.execphpwidget h3.edd_download_ti
 #content-bottom h3 {
     margin-bottom: 0;
 }
-input[type=submit] {
-    /* @test is needed?
-    font-family: Abel,sans-serif;*/
-}
 .att-grab{
   font-size:46px;
   text-align: center;
@@ -208,15 +203,14 @@ input[type=submit] {
 
 body {
     background-image: url(images/sand.png);
-    background-color: #ccc;
-    /*background-color:#f2f2f2;*/
+    background-color: #E8E8E8;
+    /*background-color:#f2f2f2; #ccc */
     
 /*@test this repeat declaration of fonts, is it needed? */
     
     /*font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;*/
 
     line-height: 1.6;
-      /*line-height: 1; @test remove */
     font-size: 16px;
     text-rendering: optimizelegibility;
     color: #444;
@@ -579,24 +573,90 @@ div.wpcf7-response-output.wpcf7-validation-errors:before {
 
 /*--------------------------------------------------------------
 5.1 - Links
+@todo check buttons on comment submit, 
+checkout, add to cart, details on shop page,
+contact page,
+and mobile
 --------------------------------------------------------------*/
 a {
     text-decoration: none;
 }
 
-a.button,button.button,input.button,#respond input#submit,#content input.button,.edd-add-to-cart.button.blue {
+input.button,
+#respond input#submit,
+#content input.button,
+.edd-add-to-cart.button.blue,
+
+#edd_purchase_receipt_products .edd_download_file_link,
+a.button.alt,
+body a.button,
+body button.button,
+button.button.alt,
+input.button.alt,input[type=submit]
+ {
+
+/* @test replace button style
+
     border-color: #4081AF!important;
     border-bottom-color: #20559A!important;
     background-color: #52A8E8;
     background: -webkit-gradient(linear,left top,left bottom,color-stop(.2,#52A8E8),color-stop(1,#2E76CF));
     background: -moz-linear-gradient(center top,#52A8E8 20%,#2E76CF 100%);
     color: #fff;
+*/
+
+
+    /* @test maybe set this basic font for buttons */
+/*   font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif!important;*/
+    
+    /* @test need text-shadow: none!important;*/
+
+    /*font-weight: 400!important;    */
+
+border:0;
+
+    min-width: 80px;
+    max-width: 100%;
+    padding: 10px 20px;
+    
+
+text-align:center;
+text-decoration: none;
+font-family: sans-serif;
+-webkit-font-smoothing: antialiased;
+color: #FFF;
+background: #748cff;
+/* @todo maybe other buttons need this padding  padding: 20px 60px;*/
+
+display: inline-block;
+white-space: nowrap;
+-webkit-transition: all 0.2s ease-in-out;
+-ms-transition: all 0.2s ease-in-out;
+-moz-transition: all 0.2s ease-in-out;
+-o-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;
+
+
 }
 
-a.button:hover,button.button:hover,input.button:hover,#respond input#submit:hover,#content input.button:hover {
+a.button:hover,button.button:hover,input.button:hover,#respond input#submit:hover,#content input.button:hover,
+
+#content input[type=button].active,#content input[type=button]:hover,#content input[type=submit].active,#content input[type=submit]:hover,#edd_purchase_receipt_products .edd_download_file_link:hover,.custombutton.active,.custombutton:hover,a.button.alt.active,a.button.alt:hover,a.button:hover,body a.button:hover,body button.button:hover,button.button.alt:active,button.button.alt:hover,input.button.alt.hover,input.button.alt:active
+ {
+    
+
+/* @test replace 
+
     background: #0073d2;
     background: -webkit-gradient(linear,left top,left bottom,color-stop(.2,#3e9ee5),color-stop(1,#1666ca));
     background: -moz-linear-gradient(center top,#3e9ee5 20%,#1666ca 100%);
+
+    */
+
+    background: #b9c5ff;
+
+
+
 }
 
 a.button.livedemo {
@@ -642,8 +702,13 @@ a.rsswidget img {
 #footer p a {
     color: #333;
 }
-#edd_purchase_receipt_products .edd_download_file_link,#review_form #submit.alt,
-a.button,a.button.alt,body #review_form #submit,body a.button,body button.button,button.button.alt,input.button.alt,input[type=submit] {
+
+/* @test sync with above button styles
+
+
+
+#edd_purchase_receipt_products .edd_download_file_link,
+a.button,a.button.alt,body a.button,body button.button,button.button.alt,input.button.alt,input[type=submit] {
     cursor: pointer;
     font-size: 16px;
     line-height: 1em;
@@ -670,20 +735,17 @@ a.button,a.button.alt,body #review_form #submit,body a.button,body button.button
     box-shadow: inset 0 1px 0 hsla(0,100%,100%,.3),inset 0 0 2px hsla(0,100%,100%,.3),0 1px 2px hsla(0,0%,0%,.29);
 }
 
-#content input[type=button].active,#content input[type=button]:hover,#content input[type=submit].active,#content input[type=submit]:hover,#edd_purchase_receipt_products .edd_download_file_link:hover,#review_form #submit.alt.hover,#review_form #submit.alt:active,.custombutton.active,.custombutton:hover,a.button.alt.active,a.button.alt:hover,a.button:hover,body #review_form #submit:hover,body a.button:hover,body button.button:hover,button.button.alt:active,button.button.alt:hover,input.button.alt.hover,input.button.alt:active {
+#content input[type=button].active,#content input[type=button]:hover,#content input[type=submit].active,#content input[type=submit]:hover,#edd_purchase_receipt_products .edd_download_file_link:hover,.custombutton.active,.custombutton:hover,a.button.alt.active,a.button.alt:hover,a.button:hover,body a.button:hover,body button.button:hover,button.button.alt:active,button.button.alt:hover,input.button.alt.hover,input.button.alt:active {
     text-decoration: none!important;
     background: #0073d2;
     background: -webkit-gradient(linear,left top,left bottom,color-stop(.2,#3e9ee5),color-stop(1,#1666ca));
     background: -moz-linear-gradient(center top,#3e9ee5 20%,#1666ca 100%);
 }
 
-/* @test if needed */
-a.button,button.button,input.button,#review_form #submit {
 
-    font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif!important;
-    text-shadow: none!important;
-    font-weight: 400!important;
-}
+
+*/
+
 
 
 /*--------------------------------------------------------------
