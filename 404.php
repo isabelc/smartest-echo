@@ -1,1 +1,1 @@
-<?php get_header(); ?><div class="col_12"><article id="entry" class="pad20both pad20vertical"><h1>Page Not Found (Error 404)</h1><p>It looks like nothing was found at this location. Maybe try a search?</p><?php get_search_form(); ?></article></div><?php get_footer(); ?>
+<?php get_header(); ?><div class="row"><div class="col_12"><article id="entry" class="pad20both pad20vertical"><h1>Page Not Found (Error 404)</h1><p>It looks like nothing was found at this location. Maybe try a search?</p><?php get_search_form(); ?></article></div></div><!-- .row --><?php get_footer(); ?>

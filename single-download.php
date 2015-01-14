@@ -1,4 +1,6 @@
-<?php get_header(); ?><div id="singleDL" class="col_12"><article id="entry" class="pad20both pad20vertical">
+<?php get_header(); ?>
+<div class="row">
+<div id="singleDL" class="col_12"><article id="entry" class="pad20both pad20vertical">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <div id="imgcol"><?php 
 
@@ -41,5 +43,5 @@ if ( $attachments ) { ?>
 	$demoslug = $post->post_name;// slug
 	$demourl = get_bloginfo('url').'/'.$demoslug.'/';
 	echo '<a href="'.$demourl.'" title="Demo '.the_title_attribute('echo=0').' theme" class="button livedemo" target="_blank">Live Demo</a>';
-} ?><br /><a target="_blank" href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink()); ?>" class="simple-share ss-gplus" title="Share on G+">G+ Share</a><a target="_blank" href="https://twitter.com/share?text=<?php echo urlencode(strip_tags(get_the_title())); ?>&amp;hashtags=WordPressTheme,WordPressThemes" class="simple-share ss-twitter" title="Tweet">Tweet</a><a target="_blank" href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" class="simple-share ss-facebook" title="Share on Facebook">Share</a><a href="http://www.pinterest.com/pin/create/button/?url=<?php echo urlencode(get_permalink()); ?>&media=<?php echo $full_feat_img_url; ?>&description=<?php echo urlencode(get_the_title() . ' - ' . get_permalink()); ?>" class="simple-share ss-pinterest" target="_blank">Pin It</a><br /><br /><?php the_content(); ?><div class="clear pad20bottom"></div><div class="contenthr"></div><?php endwhile; else : ?><h1><?php _e( 'Nothing Found', 'storefront' ); ?></h1><p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'storefront' ); ?></p><?php get_search_form();
-endif; ?></article></div><?php get_footer(); ?>
+} ?><br /><a target="_blank" href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink()); ?>" class="simple-share ss-gplus" title="Share on G+">G+ Share</a><a target="_blank" href="https://twitter.com/share?text=<?php echo urlencode(strip_tags(get_the_title())); ?>&amp;hashtags=WordPressTheme,WordPressThemes" class="simple-share ss-twitter" title="Tweet">Tweet</a><a target="_blank" href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" class="simple-share ss-facebook" title="Share on Facebook">Share</a><a href="http://www.pinterest.com/pin/create/button/?url=<?php echo urlencode(get_permalink()); ?>&media=<?php echo $full_feat_img_url; ?>&description=<?php echo urlencode(get_the_title() . ' - ' . get_permalink()); ?>" class="simple-share ss-pinterest" target="_blank">Pin It</a><br /><br /><?php the_content(); ?><div class="clear pad20bottom"></div><?php endwhile; else : ?><h1><?php _e( 'Nothing Found', 'storefront' ); ?></h1><p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'storefront' ); ?></p><?php get_search_form();
+endif; ?></article></div></div><!-- .row --><?php get_footer(); ?>

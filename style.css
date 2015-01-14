@@ -1339,26 +1339,11 @@ div.comment-meta {
     margin-right: 0%;
 }
 
-
-body.page-template-tpl-home-php,body.page-template-tpl-home-php #content.widecolumn {
+/* @test remove 
+body.page-template-tpl-home-php{
     padding: 1em 1em 1em 1.5em;
 }
-
-/* @todo @test
-.fullwide-row {
-    display: block;
-    background-color: white;
-    margin: 0;
-    padding: 1em;
-    
-}
 */
-
-.container {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
 .row {
     clear: both;
     width: 100%;
@@ -1378,6 +1363,27 @@ body.page-template-tpl-home-php,body.page-template-tpl-home-php #content.widecol
 .row.homerow {
     overflow: visible;
     height: auto;
+}
+
+
+/* @test */
+.fullwide-row {
+    display: block;
+    background-color: white;
+    margin: 0;
+    padding: 1em 0;
+    
+}
+
+.reading-row{
+    max-width: 650px;
+}
+
+.fullwide-row.splash{padding: 3em 0}
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .box {
@@ -2833,7 +2839,7 @@ ul#nav ul.sub-menu li a {
 }
 
 @media handheld,only screen and (max-device-width:640px) {
-    body.page-template-tpl-home-php,body.page-template-tpl-home-php #content.widecolumn {
+    body.page-template-tpl-home-php{
         padding: 1em;
     }
 

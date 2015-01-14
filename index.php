@@ -3,7 +3,7 @@ $schema = '';
 if ( is_home() ) {
 	$schema = 'Blog';
 } 
-?><div class="col_12" <?php if ( $schema ) echo ' itemscope itemtype="http://schema.org/'.$schema.'"'; ?>>
+?><div class="row reading-row"><div class="col_12" <?php if ( $schema ) echo ' itemscope itemtype="http://schema.org/'.$schema.'"'; ?>>
 <article id="entry" class="pad20both pad20vertical">
 <?php if ( have_posts() ) : ?>
 <h1><?php if(is_home()) {
@@ -31,4 +31,4 @@ else : ?>
 <?php get_search_form(); ?>
 <?php endif; ?>
 </article>
-</div><?php get_footer(); ?>
+</div></div><?php get_footer(); ?>

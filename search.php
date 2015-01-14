@@ -1,4 +1,6 @@
-<?php get_header(); ?><div class="col_12" itemscope itemtype="http://schema.org/SearchResultsPage">
+<?php get_header(); ?>
+<div class="row">
+<div class="col_12" itemscope itemtype="http://schema.org/SearchResultsPage">
 <div id="entry" class="pad20both pad20vertical">
 <?php if ( have_posts() ) { /* Start the MAIN Loop */ ?>
 <p><span itemprop="name">These are search results for</span> "<strong><?php the_search_query() ?></strong>".</p>
@@ -60,4 +62,4 @@
 } else { ?>
 	<h1><?php _e( 'Nothing Found', 'storefront' ); ?></h1>
 	<p><?php _e( 'There were no results found that match your query.', 'storefront themes' ); ?></p>
-<?php } ?><div class="clear"></div></div></div><?php get_footer(); ?>
+<?php } ?><div class="clear"></div></div></div></div><!-- .row --><?php get_footer(); ?>

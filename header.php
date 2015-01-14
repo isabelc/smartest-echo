@@ -1,13 +1,12 @@
 <!doctype html>  
-<!--[if IE 8]><html class="ie ie8" <?php language_attributes(); ?>><![endif]-->
 <!--[if IE 9 ]><html class="ie ie8" <?php language_attributes(); ?>><![endif]-->   
 <!--[if (gt IE 9)|!(IE)]><!--> <html <?php language_attributes(); ?>> <!--<![endif]--> 
 <head><meta charset="<?php bloginfo( 'charset' ); ?>"><meta name="viewport" content="width=device-width"><title><?php wp_title( '', true, 'right' ); ?></title><?php $sitename = 'Smartest Themes';
 $homedesc = 'Custom WordPress Themes to get your business website up quick and easy by Smartest Themes.';
 $homekeys = 'smartest themes, WordPress themes, business themes, app themes,business website';
 $fb_id = 'isabel.8991';
-$shoptitle = 'Smartest Themes - Business WordPress Themes';
-$shopdesc = 'Custom business WordPress themes for sale by Smartest Themes. Premium Themes.';
+$shoptitle = 'WordPress Themes For Business';
+$shopdesc = 'WordPress themes for business by Smartest Themes.';
 $shopkeys = 'smartest themes, WordPress themes, business themes, app themes';
 global $paged, $page;
 if (is_front_page()) { ?><meta name="description" content="<?php echo $homedesc; ?>" />
@@ -56,15 +55,18 @@ embed nav cart php instead of using include.
 
 		<div id="primary">
 
-		<!-- this is test -->
+		<!-- @test this is test -->
+
 		<?php if (is_front_page()) { ?>
 
 
-				<!-- <div class="fullwide-row">
-			.
+		<div class="fullwide-row splash">
+	<a href="<?php bloginfo('url'); ?>/downloads" title="WordPress Themes For Business"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2015/01/smartest-themes-fullwidth-1756.png" alt="WordPress Themes For Business" title="WordPress Themes For Business" width="1756" height="250" /></a>
 
-				</div> -->
+</div>
+
+
 		<?php } ?>
-
-			<div id="content" class="row box<?php if ( is_front_page() ) { echo ' homerow'; } ?>">
+<!-- @test removed .row from class below!!! -->
+			<div id="content" class="box<?php if ( is_front_page() ) { echo ' homerow'; } ?>">
 			<?php wp_enqueue_style('font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'); ?>
