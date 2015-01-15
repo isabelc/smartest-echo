@@ -2018,7 +2018,7 @@ body.home #content img {
     display: inline-block;
 }
 
-.bell-blue-24,.isa_icon.comments_blue_24,.isa_icon.info_24,.isa_icon.books,.isa_icon.analytics_64,.isa_icon.google_64,.isa_icon.mail_send64,.isa_icon.Newbie65,.isa_icon.Newbie128,.isa_icon.search-results_64,.isa_icon.smartest_themes_girl,.isa_icon.smartest_themes_girl_glasses,.isa_icon.website-optimization_64, .iconpanic, .feather, .isa_icon.snippet, .isa_icon.infinity_65 {
+.bell-blue-24,.isa_icon.comments_blue_24,.isa_icon.info_24,.isa_icon.books,.isa_icon.analytics_64,.isa_icon.google_64,.isa_icon.mail_send64,.isa_icon.Newbie65,.isa_icon.Newbie128,.isa_icon.search-results_64,.isa_icon.smartest_themes_girl,.isa_icon.smartest_themes_girl_glasses,.isa_icon.website-optimization_64, .feather, .isa_icon.snippet, .isa_icon.infinity_65 {
     background: url(isa_framework/icons/sprite-home.png) no-repeat;
 }
 
@@ -2117,11 +2117,13 @@ body.home #content img {
     height: 29px;
 }
 .iconpanic {
-    padding: 0 0 0 24px;
-    background-position: -445px 0px;
-    width: 16px;
-    height: 16px;
     white-space: nowrap;
+}
+.iconpanic:before{
+    font: 1.3em FontAwesome;    
+    content: '\f111';
+    margin-right: 10px;
+    color: #ff1919;
 }
 span.blogicon {
     font-family: FontAwesome;
