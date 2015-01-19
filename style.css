@@ -231,18 +231,16 @@ table {
 }
 
 strong {
-	/*font-weight: 700;*/
-	font-family: 'neptune_bold';/* @test em */
+	font-family: 'neptune_bold';
 }
 
 em {
 	font-style: italic;
-	font-family: 'neptune_italic';/* @test em */
+	font-family: 'neptune_italic';
 }
 
 strong em, em strong{
-	font-family: 'neptune_bold_italic'; 
-	/*@test */
+	font-family: 'neptune_bold_italic';
 }
 
 article code,article pre {
@@ -2456,10 +2454,23 @@ table.shop_table.cart td {
 		font-size:18px;
 		padding-top:2em;
 	}
-	body.home #content .fullwide-row.splash {
-		/*@testmargin-left: -400px;*/
+
+
+	.fullwide-row.splash img {
 		display: none;
 	}
+
+
+	body.home #content .fullwide-row.splash a {
+		display: block;
+		background: url(https://smartestthemes.com/wp-content/uploads/2015/01/smartest-themes-mobile-351x89.png) no-repeat center center;
+		height: 89px;
+	}
+
+	.fullwide-row.splash {
+		padding: 2em 0px;
+	}
+	
 
 }
 
