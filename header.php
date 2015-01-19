@@ -51,5 +51,5 @@ embed nav cart php instead of using include.
 	<div id="main">
 
 		<div id="primary">
-			<div id="content" class="box<?php if ( is_front_page() ) { echo ' homerow'; } ?>">
+			<div id="content">
 			<?php wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'); ?>
