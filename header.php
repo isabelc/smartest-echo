@@ -34,9 +34,31 @@ if ( $paged >= 2 ) {echo '<meta name="robots" content="noindex, follow, noarchiv
 <link href="<?php bloginfo('template_url'); ?>/isa_framework/images/favicon.png" rel="shortcut icon" type="image/ico" /><?php wp_head(); ?><script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-41426075-1']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga, s);})();</script></head><body <?php body_class(); ?>>
 
 <div class="pad20bottom">
-	<header id="header" class="row"><div class="alignleft" id="logo"><?php if ( get_option('smartestb_logo') ) { ?><a href="<?php bloginfo('url'); ?>" title="Smartest Themes <?php bloginfo('description'); ?>"><img src="<?php echo get_option('smartestb_logo'); ?>" alt="<?php bloginfo('name'); ?>" title="Smartest Themes <?php bloginfo('description'); ?>" /></a><?php } ?><a href="<?php bloginfo('url'); ?>" title="Smartest Themes <?php bloginfo('description'); ?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2015/01/st_logo_2015.png" alt="<?php bloginfo('name'); ?>" title="Smartest Themes <?php bloginfo('description'); ?>" width="350" height="102" /></a></div><div class="alignright pad20bottom" id="header-right"><div class="mobilesearch"><?php get_search_form(); ?><a class="mobilecart" href="<?php bloginfo('url'); ?>/checkout/" title="View your shopping cart"></a></div><div id="nav-container"><div id="navwrap"><?php wp_nav_menu( 'theme_location=primary-menu&container=&menu_id=nav&menu_class=&items_wrap=<ul id="%1$s">%3$s</ul>' );
-		get_template_part('includes/nav', 'cart');
-		?><div class="clear"></div></div></div></div><div class="clear"></div>
+	<header id="header" class="row"><div class="alignleft" id="logo"><?php if ( get_option('smartestb_logo') ) { ?><a href="<?php bloginfo('url'); ?>" title="Smartest Themes <?php bloginfo('description'); ?>"><img src="<?php echo get_option('smartestb_logo'); ?>" alt="<?php bloginfo('name'); ?>" title="Smartest Themes <?php bloginfo('description'); ?>" /></a><?php } ?><a href="<?php bloginfo('url'); ?>" title="Smartest Themes <?php bloginfo('description'); ?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2015/01/st_logo_2015.png" alt="<?php bloginfo('name'); ?>" title="Smartest Themes <?php bloginfo('description'); ?>" width="350" height="102" /></a></div>
+
+	<div class="alignright pad20bottom" id="header-right">
+
+		<div class="mobilesearch"><?php get_search_form(); ?><a class="mobilecart" href="<?php bloginfo('url'); ?>/checkout/" title="View your shopping cart"></a></div>
+
+		<nav id="nav-container" class="navigation">
+
+			<div id="navwrap">
+
+				<button class="menu-toggle">Menu</button>
+
+				<?php wp_nav_menu( 'theme_location=primary-menu&container=&menu_class=nav-menu&items_wrap=<ul class="%2$s">%3$s</ul>' );
+					get_template_part('includes/nav', 'cart');
+		?>
+
+				<div class="clear"></div>
+	
+			</div>
+
+		</nav>	<!-- #nav-container -->
+
+	</div>
+
+	<div class="clear"></div>
 	</header>
 	<div id="main">
 		<div id="primary">

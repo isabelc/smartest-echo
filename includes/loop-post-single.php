@@ -1,4 +1,8 @@
-<?php while ( have_posts() ) : the_post();
+<?php
+/**
+ * This file is not currently used, but may use it in the future.
+ */
+while ( have_posts() ) : the_post();
 	?><div id="post-<?php the_ID(); ?>" class="post"><h1><?php the_title(); ?></h1><?php 
 	if(has_post_thumbnail()) {
 		

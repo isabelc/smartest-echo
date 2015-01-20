@@ -651,25 +651,28 @@ a.rsswidget img {
 5.2 - Menus
 --------------------------------------------------------------*/
 
-ul#nav li.current-menu-item a,body.single-download ul#nav li.shop a,body.bbPress ul#nav li.bbpress-support a,.page-id-138 ul#nav li.bbpress-support a,body.page-id-95 ul#nav li.myaccount a {
+ul.nav-menu li.current-menu-item a,body.single-download ul.nav-menu li.shop a,body.bbPress ul.nav-menu li.bbpress-support a,.page-id-138 ul.nav-menu li.bbpress-support a,body.page-id-95 ul.nav-menu li.myaccount a {
 	background: #444;
 	/*color: #ddd;*/
 	color: #adadad; /* @test */
 }
 #nav-container {
-	background: #333;
+
 	/* @test color: #eee;*/
 	color: #fbfbfb;
 	width: auto;
 	float: right;
 	padding: 0 5px;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#333333');
-	background: -webkit-gradient(linear,left top,left bottom,from(#555),to(#333));
-	background: -moz-linear-gradient(top,#555,#333);
+
+	background: #444;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#444444');
+	background: -webkit-gradient(linear,left top,left bottom,from(#555),to(#444));
+	background: -moz-linear-gradient(top,#555,#444);
 	behavior: url(ie-css3.htc);
+
 }
 
-ul#nav {
+ul.nav-menu {
 	list-style: none;
 	font-size: 1.2em;
 	float: left;
@@ -677,14 +680,20 @@ ul#nav {
 	border-left: 1px solid #474747;
 }
 
-ul#nav li {
+ul.nav-menu li {
 	text-align: left;
 	float: left;
 	display: block;
 	position: relative;
+
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	/*float: right; @test remove*/
+
 }
 
-ul#nav li a,a.navcart {
+ul.nav-menu li a,a.navcart {
 	padding: 12px 20px;
 	display: block;
 	text-decoration: none;
@@ -698,13 +707,13 @@ ul#nav li a,a.navcart {
 
 
 
-ul#nav li a:hover,a.navcart:hover {
+ul.nav-menu li a:hover,a.navcart:hover {
 	background: #444;
 	color: #adadad;
 }
 
 
-#nav ul.sub-menu {
+.nav-menu ul.sub-menu {
 	position: absolute;
 	width: 12em;
 	z-index: 999;
@@ -726,7 +735,7 @@ ul#nav li a:hover,a.navcart:hover {
 }
 
 
-ul#nav ul.sub-menu li a {
+ul.nav-menu ul.sub-menu li a {
 	width: 10em;
 	padding-left: 1em;
 	padding-right: 1em;
@@ -734,16 +743,16 @@ ul#nav ul.sub-menu li a {
 	border: 0;
 }
 
-#nav li ul a {
+.nav-menu li ul a {
 	position: relative;
 	z-index: 999;
 }
 
-#nav ul ul {
+.nav-menu ul ul {
 	top: auto;
 }
 
-#nav ul.sub-menu ul {
+.nav-menu ul.sub-menu ul {
 	margin-left: 12em;
 	margin-top: -50px;
 	-moz-border-radius: 0 3px 3px;
@@ -751,11 +760,11 @@ ul#nav ul.sub-menu li a {
 	border-radius: 0 3px 3px;
 }
 
-#nav li:hover ul ul,#nav li:hover ul ul ul,#nav li:hover ul ul ul ul {
+.nav-menu li:hover ul ul,.nav-menu li:hover ul ul ul,.nav-menu li:hover ul ul ul ul {
 	display: none;
 }
 
-#nav li:hover ul,#nav li li:hover ul,#nav li li li:hover ul,#nav li li li li:hover ul {
+.nav-menu li:hover ul,.nav-menu li li:hover ul,.nav-menu li li li:hover ul,.nav-menu li li li li:hover ul {
 	display: block;
 }
 
@@ -803,19 +812,6 @@ a.navcart:before{
 	font:1.3em FontAwesome;
 	content:'\f07a';
 }
-#nav-container li {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	float: right;
-}
-#nav-container {
-	background: #444;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#444444');
-	background: -webkit-gradient(linear,left top,left bottom,from(#555),to(#444));
-	background: -moz-linear-gradient(top,#555,#444);
-	behavior: url(ie-css3.htc);
-}
 
 #isa-edd-qty {
 	float: right;
@@ -831,6 +827,13 @@ a.navcart:before{
 
 #navwrap {
 	border-right: 1px solid #545454;
+}
+
+
+/* Small menu */
+.menu-toggle {
+	cursor: pointer;
+	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -2300,7 +2303,7 @@ table.shop_table.cart td {
 		margin-right: 3px;
 	}
 
-	ul#nav {
+	ul.nav-menu {
 		border-left: 0;
 		padding-left: 3px;
 	}
@@ -2311,15 +2314,15 @@ table.shop_table.cart td {
 		border-radius: 0;
 	}
 
-	ul#nav ul.sub-menu li a {
+	ul.nav-menu ul.sub-menu li a {
 		width: 8em;
 	}
 
-	#nav ul.sub-menu {
+	.nav-menu ul.sub-menu {
 		width: 10em;
 	}
 
-	#nav ul.sub-menu ul {
+	.nav-menu ul.sub-menu ul {
 		margin-left: 10em;
 	}
 
@@ -2339,17 +2342,17 @@ table.shop_table.cart td {
 		width: 100%;
 	}
 
-	ul#nav {
+	ul.nav-menu {
 		font-size: 1em;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	a.navcart,ul#nav li a {
+	a.navcart,ul.nav-menu li a {
 		font-size: 1em!important;
 	}
 
-	ul#nav li a,a.navcart,.navsearch {
+	ul.nav-menu li a,a.navcart,.navsearch {
 		padding: 10px;
 	}
 
@@ -2470,6 +2473,100 @@ table.shop_table.cart td {
 	.fullwide-row.splash {
 		padding: 2em 0px;
 	}
+
+	/* small menu */
+	.menu-toggle,
+	#nav-container.toggled .nav-menu {
+		display: block;
+	}
+	#nav-container{background:transparent;}
+
+	.menu-toggle,
+	#nav-container.toggled .nav-menu {
+		display: block;
+	}
+	#nav-container{background:transparent;}
+
+	.menu-toggle{
+		cursor:pointer;
+		font-size:0;
+/* 		height:46px; */
+		margin:0;
+		overflow:hidden;
+		
+		position: absolute;
+		top:0px;
+		right:0;
+		
+		text-align:center;
+/* 		width:64px; */
+		display:block;
+		z-index:999;
+		border:0;
+		padding:0;
+			
+		
+	}
+
+	.menu-toggle:before{
+		display:inline-block;
+		text-decoration:inherit;
+		vertical-align:text-bottom;
+		font-family:FontAwesome;
+		
+		
+		
+		padding: 0;
+		margin:0;
+			
+		
+		content:"\f0c9";
+		font-size:46px;
+		
+		font-style:normal;
+		font-weight:400;
+		
+
+	}
+
+	
+	#header-right{
+		background: #555;min-height: 46px;
+		
+		position: relative;display: block;
+		
+		vertical-align: bottom;
+	}
+
+	a.mobilecart {
+		
+		margin:8px 24px;
+	    
+	    color: #fff;
+	    float: none;
+		font-size:18px;
+	    
+	}
+
+	/* @todo make search box exact height of bar. */
+
+
+	#nav-container ul {
+		display: none;
+	}
+	#nav-container.toggled li {
+		float: none;
+	}
+	#nav-container.toggled ul ul {
+		box-shadow: none;
+		display: block;
+		left:1em;
+		position: relative;
+		float:none;
+		top: auto;
+	}
+
+
 	
 
 }

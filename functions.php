@@ -226,8 +226,10 @@ function vt_resize( $attach_id = null, $img_url = null, $width, $height, $crop =
 }
 
 function smartestecho_enqueue_scripts( ) {
+
+    $path = get_template_directory_uri();
 	
-	wp_enqueue_style( 'smartest-echo', get_template_directory_uri(). '/style.css');
+	wp_enqueue_style( 'smartest-echo', $path . '/style.css');
 	
 	wp_deregister_script( 'jquery' );
     if( ! is_front_page() ) {
@@ -241,8 +243,8 @@ function smartestecho_enqueue_scripts( ) {
 		wp_dequeue_style( 'q-a-plus');
 	}
 	if(is_single()) {
-		wp_enqueue_style( 'fancybox', get_template_directory_uri() . '/css/jquery.fancybox.css');
-		wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/js/jquery.fancybox.pack.js', array('jquery'), false, true );
+		wp_enqueue_style( 'fancybox', $path . '/css/jquery.fancybox.css');
+		wp_enqueue_script( 'fancybox', $path . '/js/jquery.fancybox.pack.js', array('jquery'), false, true );
 	}
 	if ( class_exists('bbPress') ) {
 	  if ( ! is_bbpress() ) {
@@ -256,5 +258,14 @@ function smartestecho_enqueue_scripts( ) {
 	wp_enqueue_script( 'edd-ajax', plugins_url( '/easy-digital-downloads/assets/js/edd-ajax.min.js'), array( 'jquery' ), EDD_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'smartestecho_enqueue_scripts' );
+
+/**
+* Insert script to Toggle navigation menu for small screens
+*/
+function isa_wp_foot() {
+    echo "<script>( function() { var container, button, menu; container = document.getElementById( 'nav-container' ); if ( ! container ) return; button = container.getElementsByTagName( 'button' )[0];if ( 'undefined' === typeof button ) return;menu = container.getElementsByTagName( 'ul' )[0]; if ( 'undefined' === typeof menu ) { button.style.display = 'none'; return;} if ( -1 === menu.className.indexOf( 'nav-menu' ) ) menu.className += ' nav-menu'; button.onclick = function() { if ( -1 !== container.className.indexOf( 'toggled' ) ) container.className = container.className.replace( ' toggled', '' ); else container.className += ' toggled';};} )();</script>";
+
+}
+add_action('wp_footer','isa_wp_foot');
 
 ?>

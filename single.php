@@ -9,7 +9,7 @@ if ( 'post' == $post_type ) {
 <div class="row"><div class="col_12" <?php echo ' itemscope itemtype="http://schema.org/' . $schema . '"'; ?>>
 <?php 
 $cssclass = 'pad20both pad20vertical';
-// if is a regular post, add grid 8 and grid 4 for sideabar @Test
+// if is a regular post, add grid 8 and grid 4 for sideabar
 
 if ( 'post' == $post_type ) { 
 	?><div class="col_8"><?php
@@ -67,7 +67,7 @@ endif;
 
 ?></article><?php
 
-// if is a regular post, add grid 8 and grid 4 for sideabar @Test
+// if is a regular post, add grid 8 and grid 4 for sideabar
 
 if ( 'post' == $post_type ) {
 
