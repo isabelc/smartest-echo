@@ -38,11 +38,6 @@ Text Domain: smartest-echo
 12.0 - Media
 13.0 - misc
 --------------------------------------------------------------*/
-
-/*
-@todo mobile menu
-
-*/
 @font-face {
 	font-family: 'neptune';
 	src: url('css/fonts/neptune-webfont.eot');
@@ -653,17 +648,13 @@ a.rsswidget img {
 
 ul.nav-menu li.current-menu-item a,body.single-download ul.nav-menu li.shop a,body.bbPress ul.nav-menu li.bbpress-support a,.page-id-138 ul.nav-menu li.bbpress-support a,body.page-id-95 ul.nav-menu li.myaccount a {
 	background: #444;
-	/*color: #ddd;*/
-	color: #adadad; /* @test */
+	color: #adadad;
 }
 #nav-container {
-
-	/* @test color: #eee;*/
 	color: #fbfbfb;
 	width: auto;
 	float: right;
 	padding: 0 5px;
-
 	background: #444;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#444444');
 	background: -webkit-gradient(linear,left top,left bottom,from(#555),to(#444));
@@ -677,7 +668,6 @@ ul.nav-menu {
 	font-size: 1.2em;
 	float: left;
 	margin: 0;
-	border-left: 1px solid #474747;
 }
 
 ul.nav-menu li {
@@ -689,7 +679,6 @@ ul.nav-menu li {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	/*float: right; @test remove*/
 
 }
 
@@ -698,9 +687,6 @@ ul.nav-menu li a,a.navcart {
 	display: block;
 	text-decoration: none;
 	color: #fbfbfb;
-	border-right: 1px solid #454545;
-	border-left: 1px solid #545454;
-	text-shadow: 1px 1px 0 #000;
 	height: 30px;
 }
 
@@ -715,13 +701,9 @@ ul.nav-menu li a:hover,a.navcart:hover {
 
 .nav-menu ul.sub-menu {
 	position: absolute;
-	width: 12em;
 	z-index: 999;
 	background: #333;
 	display: none;
-	-moz-border-radius: 0 0 3px 3px;
-	-webkit-border-radius: 0 0 3px 3px;
-	border-radius: 0 0 3px 3px;
 	-moz-box-shadow: 0 1px 4px #333;
 	-webkit-box-shadow: 0 1px 4px #333;
 	box-shadow: 0 1px 4px #333;
@@ -736,7 +718,7 @@ ul.nav-menu li a:hover,a.navcart:hover {
 
 
 ul.nav-menu ul.sub-menu li a {
-	width: 10em;
+	white-space: nowrap;
 	padding-left: 1em;
 	padding-right: 1em;
 	float: none;
@@ -824,11 +806,6 @@ a.navcart:before{
 	border-right: 1px solid #474747;
 	border-left: 1px solid #545454;
 }
-
-#navwrap {
-	border-right: 1px solid #545454;
-}
-
 
 /* Small menu */
 .menu-toggle {
@@ -2490,20 +2467,17 @@ table.shop_table.cart td {
 	.menu-toggle{
 		cursor:pointer;
 		font-size:0;
-/* 		height:46px; */
 		margin:0;
 		overflow:hidden;
-		
 		position: absolute;
 		top:0px;
 		right:0;
-		
 		text-align:center;
-/* 		width:64px; */
 		display:block;
 		z-index:999;
 		border:0;
 		padding:0;
+		background-color:#fff;
 			
 		
 	}
@@ -2531,7 +2505,7 @@ table.shop_table.cart td {
 
 	
 	#header-right{
-		background: #555;min-height: 46px;
+		background: #555;min-height: 48px;
 		
 		position: relative;display: block;
 		
@@ -2540,16 +2514,13 @@ table.shop_table.cart td {
 
 	a.mobilecart {
 		
-		margin:8px 24px;
+		margin:8px 22px 0 22px;
 	    
 	    color: #fff;
 	    float: none;
 		font-size:18px;
 	    
 	}
-
-	/* @todo make search box exact height of bar. */
-
 
 	#nav-container ul {
 		display: none;
