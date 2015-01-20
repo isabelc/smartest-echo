@@ -1,7 +1,4 @@
-<!doctype html>  
-<!--[if IE 9 ]><html class="ie ie8" <?php language_attributes(); ?>><![endif]-->   
-<!--[if (gt IE 9)|!(IE)]><!--> <html <?php language_attributes(); ?>> <!--<![endif]--> 
-<head><meta charset="<?php bloginfo( 'charset' ); ?>"><meta name="viewport" content="width=device-width"><title><?php wp_title( '', true, 'right' ); ?></title><?php $sitename = 'Smartest Themes';
+<!doctype html><html <?php language_attributes(); ?>><head><meta charset="<?php bloginfo( 'charset' ); ?>"><meta name="viewport" content="width=device-width"><title><?php wp_title( '', true, 'right' ); ?></title><?php $sitename = 'Smartest Themes';
 $homedesc = 'Custom WordPress Themes to get your business website up quick and easy by Smartest Themes.';
 $homekeys = 'smartest themes, WordPress themes, business themes, app themes,business website';
 $fb_id = 'isabel.8991';
@@ -47,9 +44,7 @@ embed nav cart php instead of using include.
 <div class="pad20bottom">
 	<header id="header" class="row"><div class="alignleft" id="logo"><?php if ( get_option('smartestb_logo') ) { ?><a href="<?php bloginfo('url'); ?>" title="Smartest Themes <?php bloginfo('description'); ?>"><img src="<?php echo get_option('smartestb_logo'); ?>" alt="<?php bloginfo('name'); ?>" title="Smartest Themes <?php bloginfo('description'); ?>" /></a><?php } ?><a href="<?php bloginfo('url'); ?>" title="Smartest Themes <?php bloginfo('description'); ?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2015/01/st_logo_2015.png" alt="<?php bloginfo('name'); ?>" title="Smartest Themes <?php bloginfo('description'); ?>" width="350" height="102" /></a></div><div class="alignright pad20bottom" id="header-right"><div class="mobilesearch"><?php get_search_form(); ?><a class="mobilecart" href="<?php bloginfo('url'); ?>/checkout/" title="View your shopping cart"></a></div><div id="nav-container"><div id="navwrap"><?php wp_nav_menu( 'theme_location=primary-menu&container=&menu_id=nav&menu_class=&items_wrap=<ul id="%1$s">%3$s</ul>' ); include(TEMPLATEPATH . '/includes/nav-cart.php'); ?><div class="clear"></div></div></div></div><div class="clear"></div>
 	</header>
-
 	<div id="main">
-
 		<div id="primary">
 			<div id="content">
 			<?php wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'); ?>
