@@ -93,25 +93,6 @@ function new_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
-/* TRUNCATE TITLES @todo maybe do not need this */
-if (get_option('smartestb_product_title_shorten')) {
-add_action ('wp_head','add_jquery_stuff');  //put the query in the header
-function add_jquery_stuff () { ?>
-	<script type="text/javascript">
-          function shorten(sometext,maxlen) { return ((sometext.length<=maxlen)?sometext:(sometext.substr(0,maxlen-3)+"...")); }
-     </script><?php $shorten = get_option('smartestb_product_title_shorten'); ?>
-     <script type="text/javascript">
-     jQuery(document).ready( function () {
-          jQuery('h2.prodtitle,#content #entry ul.products li h3,body.jigoshop .products li strong').each(function(index){ //gets the link in all teaser headlines
-                var t = jQuery(this).text();
-                jQuery(this).text(shorten(t,<?php echo $shorten;?>)); //truncate to 28
-          });
-     });
-</script>
-<?php
-}
-}
-
 /**
  * BLOG COMMENTS
 */
@@ -121,7 +102,7 @@ function storefront_comment($comment, $args, $depth) {
 		  <?php printf(__('<strong>%s says:</strong>','storefront'), get_comment_author_link()) ?><div itemprop="commentText"><?php comment_text() ?></div><div class="reply"><?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></div></div></div><?php
 } 
 
-/* @todo compare with my updated
+/*
  * Resize images dynamically using wp built in functions
  * Victor Teixeira
  * Modified by Isabel Castillo
@@ -164,11 +145,10 @@ function vt_resize( $attach_id = null, $img_url = null, $width, $height, $crop =
     }
     
     $file_info = pathinfo( $file_path );
-    $extension = '.'. $file_info['extension'];
+    $extension = !empty($file_info['extension']) ? '.'. $file_info['extension'] : '';
 
     // the image path without the extension
-    $dirname_pre = $file_info['dirname'];
-    $no_ext_path = $dirname_pre.'/'.$file_info['filename'];
+    $no_ext_path = !empty($file_info['dirname']) ? $file_info['dirname'].'/'.$file_info['filename'] : '';
     $cropped_img_path = $no_ext_path.'-'.$width.'x'.$height.$extension;
 
     // checking if the file size is larger than the target size
