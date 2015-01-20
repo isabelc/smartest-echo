@@ -249,9 +249,11 @@ function smartestecho_enqueue_scripts( ) {
 	
 	wp_enqueue_style( 'smartest-echo', get_template_directory_uri(). '/style.css');
 	
-	// @test do i need jquery on home page. perhaps for mobile menu. or no. see crucible mobile menu
 	wp_deregister_script( 'jquery' );
-	wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', '','1.11.0', true);// move to footer
+    if( ! is_front_page() ) {
+        wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js', '','1.11.2', true);// move to footer
+        
+    }
 	
 	// remove Q and A from all but FAQS pages
 	if (! is_page(array('faqs', 'license-faqs'))) {
