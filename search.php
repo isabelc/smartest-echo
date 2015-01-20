@@ -17,16 +17,13 @@
 	<?php endwhile; } 
 	else { _e( 'There are no pages that match your query.', 'storefront themes' );} ?></div>
 
-
 	<?php // From the Blog
 	global $wp_query;
 	$args = array_merge( $wp_query->query, array( 'post_type' => array('post') ) );
 	query_posts( $args ); ?><div class="col_6 searchcolumn postcolumn"><h2><?php _e( 'From the Blog', 'storefront' ); ?></h2>
 		<?php if (have_posts()) { while ( have_posts() ) : the_post(); ?><div class="post"><?php if(has_post_thumbnail()) {
-			if (get_option('smartestb_blog_image_height')) {$blogimageheight = get_option('smartestb_blog_image_height');}
-			else {$blogimageheight = 125;}
-			if (get_option('smartestb_blog_image_width')) {$blogimagewidth = get_option('smartestb_blog_image_width');}
-			else {$blogimagewidth = 125;}
+			$blogimageheight = 125;
+			$blogimagewidth = 125;
 			$thumb = get_post_thumbnail_id(); 
 			$image = vt_resize( $thumb, '', $blogimagewidth, $blogimageheight, true );
 			$largeimage = vt_resize( $thumb, '', 900, 700, true ); ?><a href="<?php echo $largeimage['url']; ?>" class="fancybox-image" rel="<?php the_title(); ?>"><img src="<?php echo $image['url']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" /></a><?php 
@@ -35,11 +32,7 @@
 		} else {
 			_e( 'There are no blog posts that match your query.', 'storefront themes' );
 		}?></div><!-- .col_6 -->
-		
-		
-		
-		
-		
+	
 	<?php // begin downloads
 	if( function_exists( 'EDD' ) ) {
 		// EDD is active

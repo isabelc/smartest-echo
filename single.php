@@ -36,22 +36,25 @@ if ( have_posts() ) :
 
 		the_content();
 
-		?><div class="clear pad20bottom"></div><div class="contenthr"></div><?php
-
-		if ( (get_option('smartestb_blog_author_section') == "true") && ( 'isa_legal' != $post_type ) ) { 
-
-			?><div class="author-bio"><h3><?php _e('About the Author', 'storefront') ?></h3><div class="author-content" itemprop="author" itemscope itemtype="http://schema.org/Person"><?php
-
-			echo get_avatar( get_the_author_meta('email'), '75' );
-
-			?><div class="author-description"><strong itemprop="name"><?php the_author_meta("user_firstname"); ?> <?php the_author_meta("user_lastname"); ?></strong><p><?php the_author_meta("description"); ?></p></div></div></div><div class="clear pad20bottom"></div><div class="contenthr"></div><?php
-
-		}
-
-		wp_link_pages('before=<p>&after=</p>&next_or_number=number&pagelink=page %'); 
-
-		?></div><?php
-
+		?><div class="clear pad20bottom"></div><div class="contenthr"></div>
+<!-- author block -->
+		<!-- <div class="author-bio"><h3> -->
+		<?php 
+			// _e('About the Author', 'storefront') ?>
+		<!-- </h3><div class="author-content" itemprop="author" itemscope itemtype="http://schema.org/Person"> -->
+		<?php 
+			// echo get_avatar( get_the_author_meta('email'), '75' ); ?>
+		<!-- <div class="author-description"><strong itemprop="name"> -->
+			<?php 
+				// the_author_meta("user_firstname"); 
+				// the_author_meta("user_lastname"); 
+				?>
+			<!-- </strong><p> -->
+			<?php 
+			// the_author_meta("description"); ?>
+			<!-- </p></div></div></div><div class="clear pad20bottom"></div><div class="contenthr"></div> -->
+<!-- end author block -->
+<?php wp_link_pages('before=<p>&after=</p>&next_or_number=number&pagelink=page %'); ?></div><?php
 		if ( 'isa_legal' != $post_type ) comments_template();
 
 	endwhile;

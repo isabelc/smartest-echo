@@ -1,16 +1,9 @@
 <?php while ( have_posts() ) : the_post();
 	?><div id="post-<?php the_ID(); ?>" class="post"><h1><?php the_title(); ?></h1><?php 
 	if(has_post_thumbnail()) {
-		if (get_option('smartestb_featured_image_height')) {
-			$blogimageheight = get_option('smartestb_blog_image_height');
-		} else {
-			$blogimageheight = 200;
-		}
-		if (get_option('smartestb_featured_image_width')) {
-			$blogimagewidth = get_option('smartestb_blog_image_width');
-		} else {
-			$blogimagewidth = 300;
-		}
+		
+		$blogimageheight = 200;
+		$blogimagewidth = 200;
 		$thumb = get_post_thumbnail_id(); 
 		$image = vt_resize( $thumb, '', $blogimagewidth, $blogimageheight, true );
 		$largeimage = vt_resize( $thumb, '', 900, 700, true );

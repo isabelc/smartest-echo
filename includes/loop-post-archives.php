@@ -3,10 +3,8 @@
 		<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 		<?php 
 		if(has_post_thumbnail()) {
-		if (get_option('smartestb_blog_image_height')) {$blogimageheight = get_option('smartestb_blog_image_height');}
-		else {$blogimageheight = 150;}
-		if (get_option('smartestb_blog_image_width')) {$blogimagewidth = get_option('smartestb_blog_image_width');}
-		else {$blogimagewidth = 200;}
+			$blogimageheight = 150;
+			$blogimagewidth = 200;
 		$thumb = get_post_thumbnail_id(); 
 		$image = vt_resize( $thumb, '', $blogimagewidth, $blogimageheight, true );
  		$largeimage = vt_resize( $thumb, '', 900, 700, true );
@@ -21,7 +19,7 @@
 		Posted on <?php the_time('F j, Y') ?> by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author() ?></a> in <?php the_category(', ') ?><br />
 		<?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
 		</div>
-		<div class="entry"><?php if(get_option('smartestb_blog_content') == "Excerpt") {the_excerpt();} else {the_content();} ?></div>
+		<div class="entry"><?php the_excerpt(); ?></div>
 		<br class="clear" />
 	</div>
 <?php endwhile;?>
