@@ -49,7 +49,6 @@ if ( $paged >= 2 ) {echo '<meta name="robots" content="noindex, follow, noarchiv
 				<?php wp_nav_menu( 'theme_location=primary-menu&container=&menu_class=nav-menu&items_wrap=<ul class="%2$s">%3$s</ul>' );
 					get_template_part('includes/nav', 'cart');
 		?>
-
 				<div class="clear"></div>
 	
 			</div>
