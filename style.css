@@ -781,11 +781,9 @@ form.searchform input[type=text] {
 	box-shadow: inset 0 0 2px #202020;
 	max-width: 95%;
 }
-
 a.navcart {
 	float: right;
 	font-size: 1.2em;
-	border-right: 0;
 }
 
 
@@ -797,6 +795,7 @@ a.navcart:before{
 
 #isa-edd-qty {
 	float: right;
+	margin-top: 10px;
 }
 
 .navsearch {
@@ -982,9 +981,8 @@ a.navcart:before{
 	margin-right: 2em;
 	margin-top: 2em;
 }
-
-.edd-add-to-cart.button.blue {
-	padding: 10px 20px;
+.edd-cart-added-alert {
+	white-space: nowrap;
 }
 
 #edd_checkout_form_wrap p#isa_check_aftertext {
