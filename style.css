@@ -2216,19 +2216,11 @@ table.shop_table.cart td {
 	}
 
 	ul.nav-menu {
-		border-left: 0;
 		padding-left: 3px;
 		font-size: 1em;
 		margin-left: auto;
 	
 	}
-
-	/* @test remove #content.box,#content-bottom,#nav-container {
-		-webkit-border-radius: 0;
-		-moz-border-radius: 0;
-		border-radius: 0;
-	}*/
-
 	ul.nav-menu ul.sub-menu li a {
 		width: 8em;
 	}
@@ -2375,12 +2367,6 @@ table.shop_table.cart td {
 	}
 
 	/* small menu */
-	.menu-toggle,
-	#nav-container.toggled .nav-menu {
-		display: block;
-	}
-	/*@ test remove #nav-container{background:transparent;}*/
-
 	.menu-toggle{
 		cursor:pointer;
 		font-size:0;
@@ -2414,13 +2400,19 @@ table.shop_table.cart td {
 		font-weight:400;
 	}
 
-	
 	#header-right{
-		background: #555;height: 48px;
-		position: relative;display: block;
+		background: #444;
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#444444');
+		background: -webkit-gradient(linear,left top,left bottom,from(#555),to(#444));
+		background: -moz-linear-gradient(top,#555,#444);
+		min-height: 48px;
+		position: relative;
+		display: block;
 		vertical-align: bottom;
 	}
-
+	.nav-menu ul.sub-menu{
+		background: inherit;
+	}
 	a.mobilecart {
 		margin:8px 22px 0 22px;
 	    color: #fff;
@@ -2432,6 +2424,16 @@ table.shop_table.cart td {
 	#nav-container ul {
 		display: none;
 	}
+
+	.menu-toggle {
+		display: block;
+	}
+
+	#nav-container.toggled ul.nav-menu{
+		display: block;
+		background: inherit;
+	}
+
 	#nav-container.toggled li {
 		float: none;
 	}
