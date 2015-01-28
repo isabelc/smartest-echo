@@ -6,7 +6,7 @@ get_header();
 ?><div class="att-grab">The Smartest WordPress Themes For Small Business</div>
 
 <div class="fullwide-row splash selfclear">
-	<a href="<?php bloginfo('url'); ?>/downloads" title="WordPress Themes For Business"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2015/01/smartest-themes-fullwidth-1756.png" alt="WordPress Themes For Business" title="WordPress Themes For Business" width="1756" height="250" /></a>
+	<a href="<?php bloginfo('url'); ?>/downloads" title="WordPress Themes For Business"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2015/01/smartest-themes-full3-1756.png" alt="WordPress Themes For Business" title="WordPress Themes For Business" width="1756" height="250" /></a>
 </div>
 
 <div class="col_12" itemscope itemtype="http://schema.org/LocalBusiness"><div id="entry" class="pad10bottom pad20both"><?php
