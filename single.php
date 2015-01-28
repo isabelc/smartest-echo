@@ -28,7 +28,7 @@ if ( have_posts() ) :
 			$full_img = wp_get_attachment_image_src( $thumb, 'full');
 			?><a href="<?php echo $full_img[0]; ?>" class="fancybox" rel="<?php the_title_attribute(); ?>"><img src="<?php echo $full_img[0]; ?>" alt="<?php the_title_attribute(); ?>" itemprop="image" width="<?php echo $full_img[1]; ?>" height="<?php echo $full_img[2]; ?>" /></a><?php
 		} 
-		?><h1 itemprop="name"><?php the_title(); ?></h1><div class="post-meta"><meta itemprop="datePublished" content="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><span class="blogicon time"></span> <?php the_time('F j, Y \a\t g:i a') ?><br />	<span class="blogicon cats"></span> <?php the_category(', ') ?>&nbsp; <?php
+		?><h1 itemprop="name"><?php the_title(); ?></h1><div class="post-meta"><meta itemprop="datePublished" content="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><span class="blogicon time"></span> <?php the_time('F j, Y \a\t g:i a') ?><br /><br />	<span class="blogicon cats"></span> <?php the_category(', ') ?>&nbsp; <?php
 
 		the_tags( '<span class="blogicon tag"></span> ', ', ', '');
 
